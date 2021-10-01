@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // Checks whether the given state of the sudoku is valid or not
     bool isValid(vector<vector<char>>& board, int x, int y, char c)
     {
         for(int i = 0; i < 9; i++)
@@ -11,9 +12,10 @@ public:
             if(board[3*(x / 3) + i / 3][3*(y/3) + i % 3] == c)
                 return false;
         }
+        
         return true;
     }
-    
+    //generates all the possible states of the sudoku and returns the valid combination
     bool solve(vector<vector<char>>& v){
         for(int i=0;i<v.size();i++)
         {
@@ -43,5 +45,6 @@ public:
     }
     void solveSudoku(vector<vector<char>>& v) {
         solve(v);
+        return;
     }
 };
